@@ -8,21 +8,21 @@ entity shift_register is
         N : integer := 5
     );
     Port (
-        clk         : in  std_logic;
-        rst         : in  std_logic;
-        sample      : in  unsigned;
-        regs_out    : out unsigned_array
+        clk      : in  std_logic;
+        rst      : in  std_logic;
+        sample   : in  signed(11 downto 0);
+        regs_out : out signed_array
     );
 end shift_register;
 
 architecture arch_shift_register of shift_register is
-    signal regs : unsigned_array := (others => to_unsigned(0,12));
+    signal regs : signed_array := (others => (others => '0'));
 begin
     process(clk, rst)
     begin
         if rising_edge(clk) then
             if rst = '1' then
-                regs <= (others => to_unsigned(0,12));
+                regs <= (others => (others => '0'));
             else
                 for i in N-1 downto 1 loop
                     regs(i) <= regs(i-1);
@@ -31,6 +31,6 @@ begin
             end if;
         end if;
     end process;
-    
+
     regs_out <= regs;
 end arch_shift_register;

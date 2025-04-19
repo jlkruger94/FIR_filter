@@ -14,17 +14,20 @@ entity adder is
 end adder;
 
 architecture arch_adder of adder is
-
-    --signal sum: unsigned(29 downto 0);
-    signal sum: integer;
+    signal sum_s : signed(23 downto 0); -- más bits para evitar truncamiento
 begin
     process(data_in)
+        variable acc : integer := 0;
     begin
-        --sum <= to_unsigned(0,12);
-        sum <= 0;
+        acc := 0;
         for i in 0 to N-1 loop
-            sum <= sum + data_in(i);
+            acc := acc + data_in(i);
         end loop;
-        result <= to_unsigned(sum,12);
+
+        -- Normalización
+        sum_s <= shift_right(to_signed(acc, 24), 11);
+
+        -- Ajuste de escala y conversión a unsigned para salida
+        result <= unsigned(resize(sum_s, 12));
     end process;
 end arch_adder;

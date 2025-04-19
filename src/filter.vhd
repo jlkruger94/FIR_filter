@@ -1,7 +1,6 @@
 library IEEE;
 use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
-use IEEE.math_real.all;
 use work.FIR_Pkg.all;
 
 entity FIR_Notch is
@@ -14,22 +13,30 @@ entity FIR_Notch is
 end FIR_Notch;
 
 architecture arch_FIR_Noch of FIR_Notch is
+    constant N : integer := 59;
 
-    constant N : integer := 20;
-    -- Coeficientes del filtro notch
-    constant rom : integer_array := (0, 5, 2974, 47, -11630, -391, 22966, 1236, -30714, -2672, 26213, 4604, 0, -6712, -55970, 8438, 145717, -9023, -266603, 7608);
-    -- Señales internas
-    signal x_samples : unsigned_array;
-    signal products  : integer_array;
+    -- Array de coeficientes normalizados por 2 a la 11
+    constant rom : integer_array := (
+        0, 0, 0, 0, 0, 1, -1, -1, 2, 0, -5, 4, 5, -10, 0, 16, -13, -15, 31, 0, -46, 35, 43, -87, 0, 143, -122, -188, 617, 1229, 617, -188, -122, 143, 0, -87, 43, 35, -46, 0, 31, -15, -13, 16, 0, -10, 5, 4, -5, 0, 2, -1, -1, 1, 0, 0, 0, 0, 0
+    );
+
+    signal x_signed   : signed(11 downto 0);
+    signal x_samples  : signed_array;
+    signal products   : integer_array;
+    signal y_signed   : signed(11 downto 0);
 begin
+
+    --x_signed <= signed(x_in);
+    -- unsigned to signed
+    x_signed <= signed(x_in) - to_signed(2048, 12);
 
     SHIFT_REG: entity work.shift_register
         generic map (N => N)
         port map (
-            clk         => clk,
-            rst         => rst,
-            sample      => x_in,
-            regs_out    => x_samples
+            clk      => clk,
+            rst      => rst,
+            sample   => x_signed,
+            regs_out => x_samples
         );
 
     gen_mult: for i in 0 to N-1 generate
@@ -47,5 +54,4 @@ begin
             data_in => products,
             result  => y_out
         );
-
 end arch_FIR_Noch;
