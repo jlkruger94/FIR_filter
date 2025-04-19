@@ -15,16 +15,16 @@ end adder;
 
 architecture arch_adder of adder is
 
-    signal sum: unsigned(29 downto 0);
-    --signal sum: integer;
+    --signal sum: unsigned(29 downto 0);
+    signal sum: integer;
 begin
     process(data_in)
     begin
         --sum <= to_unsigned(0,12);
-        sum <= to_unsigned(0,30);
+        sum <= 0;
         for i in 0 to N-1 loop
-            sum <= sum + to_unsigned(data_in(i),12);
+            sum <= sum + data_in(i);
         end loop;
-        result <= resize(sum,12);
+        result <= to_unsigned(sum,12);
     end process;
 end arch_adder;
