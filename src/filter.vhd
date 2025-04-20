@@ -5,19 +5,117 @@ use work.FIR_Pkg.all;
 
 entity FIR_Notch is
     Port (
-        clk    : in  std_logic;
-        rst    : in  std_logic;
-        x_in   : in  unsigned(11 downto 0);
-        y_out  : out unsigned(11 downto 0)
+        clk     : in  std_logic;
+        rst     : in  std_logic;
+        ena     : in  std_logic;
+        x_in    : in  unsigned(11 downto 0);
+        y_out   : out unsigned(11 downto 0)
     );
 end FIR_Notch;
 
 architecture arch_FIR_Noch of FIR_Notch is
-    constant N : integer := 59;
+    constant N : integer := 99;
 
     -- Array de coeficientes normalizados por 2 a la 11
-    constant rom : integer_array := (
-        0, 0, 0, 0, 0, 1, -1, -1, 2, 0, -5, 4, 5, -10, 0, 16, -13, -15, 31, 0, -46, 35, 43, -87, 0, 143, -122, -188, 617, 1229, 617, -188, -122, 143, 0, -87, 43, 35, -46, 0, 31, -15, -13, 16, 0, -10, 5, 4, -5, 0, 2, -1, -1, 1, 0, 0, 0, 0, 0
+    constant rom : integer_array := (0,
+    0,
+    1,
+    1,
+    1,
+    0,
+    -1,
+    -3,
+    -4,
+    -1,
+    2,
+    6,
+    7,
+    4,
+    -3,
+    -9,
+    -10,
+    -6,
+    2,
+    8,
+    9,
+    5,
+    0,
+    -2,
+    0,
+    3,
+    1,
+    -9,
+    -19,
+    -21,
+    -6,
+    22,
+    48,
+    51,
+    21,
+    -33,
+    -80,
+    -89,
+    -44,
+    35,
+    107,
+    126,
+    74,
+    -27,
+    -122,
+    -154,
+    -101,
+    10,
+    119,
+    2212,
+    119,
+    10,
+    -101,
+    -153,
+    -120,
+    -27,
+    73,
+    124,
+    105,
+    34,
+    -44,
+    -86,
+    -78,
+    -32,
+    20,
+    49,
+    46,
+    21,
+    -6,
+    -20,
+    -18,
+    -8,
+    0,
+    3,
+    0,
+    -2,
+    0,
+    5,
+    8,
+    7,
+    2,
+    -5,
+    -9,
+    -8,
+    -3,
+    3,
+    6,
+    6,
+    2,
+    -1,
+    -3,
+    -3,
+    -1,
+    0,
+    1,
+    1,
+    1,
+    0,
+    0
     );
 
     signal x_signed   : signed(11 downto 0);
@@ -35,6 +133,7 @@ begin
         port map (
             clk      => clk,
             rst      => rst,
+            ena      => ena,
             sample   => x_signed,
             regs_out => x_samples
         );
@@ -42,6 +141,8 @@ begin
     gen_mult: for i in 0 to N-1 generate
         MULTi: entity work.multiplier
             port map (
+                clk    => clk,
+                ena    => ena,
                 sample => x_samples(i),
                 coeff  => rom(i),
                 result => products(i)
@@ -51,6 +152,8 @@ begin
     SUM: entity work.adder
         generic map (N => N)
         port map (
+            clk     => clk,
+            ena     => ena,
             data_in => products,
             result  => y_out
         );

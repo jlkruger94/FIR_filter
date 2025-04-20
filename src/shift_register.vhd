@@ -10,6 +10,7 @@ entity shift_register is
     Port (
         clk      : in  std_logic;
         rst      : in  std_logic;
+        ena      : in  std_logic;
         sample   : in  signed(11 downto 0);
         regs_out : out signed_array
     );
@@ -18,12 +19,12 @@ end shift_register;
 architecture arch_shift_register of shift_register is
     signal regs : signed_array := (others => (others => '0'));
 begin
-    process(clk, rst)
+    process(clk)
     begin
         if rising_edge(clk) then
             if rst = '1' then
                 regs <= (others => (others => '0'));
-            else
+            elsif ena = '1' then
                 for i in N-1 downto 1 loop
                     regs(i) <= regs(i-1);
                 end loop;

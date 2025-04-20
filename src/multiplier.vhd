@@ -4,6 +4,8 @@ use IEEE.numeric_std.all;
 
 entity multiplier is
     Port (
+        clk    : in std_logic;
+        ena    : in std_logic;
         sample : in signed(11 downto 0);
         coeff  : in integer;
         result : out integer
@@ -12,7 +14,7 @@ end multiplier;
 
 architecture arch_multiplier of multiplier is
 begin
-    process(sample, coeff)
+    process(ena, clk)
     begin
         result <= to_integer(sample) * coeff;
     end process;
