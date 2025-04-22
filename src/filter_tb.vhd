@@ -34,6 +34,9 @@ component nco is
 end component;
 
 component gen_enable is
+    Generic (
+        N : integer := 5
+    );
     Port (
         clk    : in std_logic;
         ena_o  : out std_logic;

@@ -3,8 +3,8 @@ use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
 
 entity gen_enable is
-    generic (
-        N : natural := 10
+    Generic (
+        N : integer := 5
     );
     Port (
         clk    : in std_logic;
