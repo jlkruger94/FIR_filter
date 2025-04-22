@@ -13,9 +13,16 @@ entity multiplier is
 end multiplier;
 
 architecture arch_multiplier of multiplier is
+    signal internal_result : integer;
 begin
-    process(ena, clk)
+    process(clk)
     begin
-        result <= to_integer(sample) * coeff;
+        if rising_edge(clk) then
+            if ena = '1' then
+                internal_result <= to_integer(sample) * coeff;
+            end if;
+        end if;
     end process;
+
+    result <= internal_result;
 end arch_multiplier;
