@@ -3,7 +3,8 @@
     "version": "1.0.0",
     "main": "generate_coeff.ts",
     "scripts": {
-      "start": "ts-node generate_coeff.ts"
+      "generate": "ts-node generate_coeff.ts",
+      "transform": "ts-node transform_coef.ts"
     },
     "dependencies": {},
     "devDependencies": {

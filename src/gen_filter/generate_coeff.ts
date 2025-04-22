@@ -38,10 +38,10 @@
 import {writeFileSync}  from "fs";
 
 // generate_notch.ts
-const fs = 5_000_000; // Frecuencia de muestreo
-const fc1 = 500_000;   // Límite inferior de la banda de rechazo
-const fc2 = 700_000;   // Límite superior de la banda de rechazo
-const N = 98;          // Orden del filtro (N+1 taps)
+const fs = 2_000_000; // Frecuencia de muestreo
+const fc1 = 1_000;   // Límite inferior de la banda de rechazo
+const fc2 = 2_000_000;   // Límite superior de la banda de rechazo
+const N = 32;          // Orden del filtro (N+1 taps)
 const SCALE = 2048;    // Escalado para Q1.11
 
 function sinc(x: number): number {

@@ -3,6 +3,9 @@ use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
 
 entity gen_enable is
+    generic (
+        N : natural := 10
+    );
     Port (
         clk    : in std_logic;
         ena_o  : out std_logic;
@@ -13,7 +16,7 @@ end gen_enable;
 architecture arch_gen_enable of gen_enable is
 
     signal ena    : std_logic := '0';
-    signal count  : integer range 0 to 3 := 0;
+    signal count  : integer range 0 to (N -1) := 0;
 begin
     process(clk)
     begin
@@ -22,7 +25,7 @@ begin
                 count <= 0;
                 ena_o   <= '0';
             else
-                if count = 3 then
+                if count = (N -1) then
                     ena_o <= '1';
                     count <= 0;
                 else

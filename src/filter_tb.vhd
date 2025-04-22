@@ -49,18 +49,20 @@ end component;
     signal clk: std_logic:= '0';
     signal rst: std_logic:= '1';
     signal ena_tb : std_logic;
-    signal sin_o: unsigned(DATA_W-2 downto 0);          -- salida del seno (salgo con N-2 bits)
+    signal sin_o_in_band: unsigned(DATA_W-2 downto 0);
+    signal sin_o_out_band: unsigned(DATA_W-2 downto 0);
+    signal sin_o_sum: unsigned(DATA_W-2 downto 0);
     signal cos_o: unsigned(DATA_W-2 downto 0); 
     signal paso_prueba: unsigned(5 downto 0);
     signal salida_tb: unsigned(DATA_W-2 downto 0);
 
 begin      
-    clk <= not clk after 25 ns; -- 20MHz => fs = 5MHz
+    clk <= not clk after 25 ns; -- 20MHz => fs = 2MHz
     rst <= '0' after 60 ns;
     --	paso_prueba <= "0001";
-    paso_prueba <= "000001", "100000" after 500 us, "000010" after 1000 us, "000011" after 1500 us, "000100" after 2000 us, "000111" after 2500 us, "010000" after 3000 us, "100000" after 3500 us, "111111" after 4000 us;
+    --paso_prueba <= "000001", "100000" after 500 us, "000010" after 1000 us, "000011" after 1500 us, "000100" after 2000 us, "000111" after 2500 us, "010000" after 3000 us, "100000" after 3500 us, "111111" after 4000 us;
 
-    nco_inst: nco
+    nco_inst_in_band: nco
         generic map(
             DATA_W,
             ADDR_W,
@@ -70,24 +72,53 @@ begin
         port map(
             clk,
             '0',
-            paso_prueba,
-            sin_o,
+            "000001",
+            sin_o_in_band,
             cos_o
         );
+
+    nco_inst_out_band: nco
+    generic map(
+        DATA_W,
+        ADDR_W,
+        PUNTOS,
+        PASO_W
+    )
+    port map(
+        clk,
+        '0',
+        "111111",
+        sin_o_out_band,
+        cos_o
+    );
+
+    process(clk)
+    begin
+        if rising_edge(clk) then
+            if ena_tb = '1' then 
+                sin_o_sum <= unsigned(resize(sin_o_in_band,12) + resize(sin_o_out_band,12));        
+            end if;
+        end if;
+    end process;
+
 
     filter_DUT: FIR_Notch
         port map(
             clk    =>   clk,
             rst    =>   rst,
             ena    =>   ena_tb,
-            x_in   => sin_o,
+            x_in   => sin_o_sum,
             y_out  => salida_tb
         );
-    
+
+
     gen_ena: gen_enable
+        generic map (
+            10
+        )
         port map(
             clk   => clk,
             rst   => rst,
             ena_o => ena_tb
         );
-end architecture;     
+end architecture;
