@@ -1,0 +1,959 @@
+#-----------------------------------------------------------
+# Vivado v2018.1 (64-bit)
+# SW Build 2188600 on Wed Apr  4 18:40:38 MDT 2018
+# IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
+# Start of session at: Sat Apr 26 17:25:15 2025
+# Process ID: 14544
+# Current directory: E:/Especializacion_fiuba/CLP/trabajo final/FIR/sintesis/filter/filter.runs/synth_1
+# Command line: vivado.exe -log filter_VIO.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source filter_VIO.tcl
+# Log file: E:/Especializacion_fiuba/CLP/trabajo final/FIR/sintesis/filter/filter.runs/synth_1/filter_VIO.vds
+# Journal file: E:/Especializacion_fiuba/CLP/trabajo final/FIR/sintesis/filter/filter.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source filter_VIO.tcl -notrace
+Command: synth_design -top filter_VIO -part xc7z010clg400-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 8452 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 409.227 ; gain = 97.387
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'filter_VIO' [E:/Especializacion_fiuba/CLP/trabajo final/FIR/src/filter_VIO.vhd:12]
+	Parameter DATA_W bound to: 13 - type: integer 
+	Parameter ADDR_W bound to: 15 - type: integer 
+	Parameter modulo bound to: 32767 - type: integer 
+	Parameter PASO_W bound to: 6 - type: integer 
+INFO: [Synth 8-3491] module 'nco' declared at 'E:/Especializacion_fiuba/CLP/trabajo final/FIR/src/nco.vhd:11' bound to instance 'nco_inst_in_band' of component 'nco' [E:/Especializacion_fiuba/CLP/trabajo final/FIR/src/filter_VIO.vhd:89]
+INFO: [Synth 8-638] synthesizing module 'nco' [E:/Especializacion_fiuba/CLP/trabajo final/FIR/src/nco.vhd:27]
+	Parameter DATA_W bound to: 13 - type: integer 
+	Parameter ADDR_W bound to: 15 - type: integer 
+	Parameter modulo bound to: 32767 - type: integer 
+	Parameter PASO_W bound to: 6 - type: integer 
+	Parameter Q bound to: 32767 - type: integer 
+	Parameter N bound to: 15 - type: integer 
+	Parameter INCREMENTO_W bound to: 6 - type: integer 
+INFO: [Synth 8-3491] module 'Acum_Fase' declared at 'E:/Especializacion_fiuba/CLP/trabajo final/FIR/src/acum_fase.vhd:11' bound to instance 'af' of component 'acum_fase' [E:/Especializacion_fiuba/CLP/trabajo final/FIR/src/nco.vhd:60]
+INFO: [Synth 8-638] synthesizing module 'Acum_Fase' [E:/Especializacion_fiuba/CLP/trabajo final/FIR/src/acum_fase.vhd:24]
+	Parameter Q bound to: 32767 - type: integer 
+	Parameter N bound to: 15 - type: integer 
+	Parameter INCREMENTO_W bound to: 6 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'Acum_Fase' (1#1) [E:/Especializacion_fiuba/CLP/trabajo final/FIR/src/acum_fase.vhd:24]
+	Parameter DATA_W bound to: 13 - type: integer 
+	Parameter ADDR_W bound to: 15 - type: integer 
+INFO: [Synth 8-3491] module 'Sin_Cos' declared at 'E:/Especializacion_fiuba/CLP/trabajo final/FIR/src/sin_cos.vhd:5' bound to instance 'ss' of component 'sin_cos' [E:/Especializacion_fiuba/CLP/trabajo final/FIR/src/nco.vhd:72]
+INFO: [Synth 8-638] synthesizing module 'Sin_Cos' [E:/Especializacion_fiuba/CLP/trabajo final/FIR/src/sin_cos.vhd:18]
+	Parameter DATA_W bound to: 13 - type: integer 
+	Parameter ADDR_W bound to: 15 - type: integer 
+	Parameter ADD_W bound to: 13 - type: integer 
+	Parameter DATA_W bound to: 11 - type: integer 
+INFO: [Synth 8-3491] module 'Sin_Rom' declared at 'E:/Especializacion_fiuba/CLP/trabajo final/FIR/src/sin_rom.vhd:11' bound to instance 'Sin_Cos_Table' of component 'Sin_Rom' [E:/Especializacion_fiuba/CLP/trabajo final/FIR/src/sin_cos.vhd:49]
+INFO: [Synth 8-638] synthesizing module 'Sin_Rom' [E:/Especializacion_fiuba/CLP/trabajo final/FIR/src/sin_rom.vhd:25]
+	Parameter ADD_W bound to: 13 - type: integer 
+	Parameter DATA_W bound to: 11 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'Sin_Rom' (2#1) [E:/Especializacion_fiuba/CLP/trabajo final/FIR/src/sin_rom.vhd:25]
+INFO: [Synth 8-256] done synthesizing module 'Sin_Cos' (3#1) [E:/Especializacion_fiuba/CLP/trabajo final/FIR/src/sin_cos.vhd:18]
+INFO: [Synth 8-256] done synthesizing module 'nco' (4#1) [E:/Especializacion_fiuba/CLP/trabajo final/FIR/src/nco.vhd:27]
+	Parameter DATA_W bound to: 13 - type: integer 
+	Parameter ADDR_W bound to: 15 - type: integer 
+	Parameter modulo bound to: 32767 - type: integer 
+	Parameter PASO_W bound to: 6 - type: integer 
+INFO: [Synth 8-3491] module 'nco' declared at 'E:/Especializacion_fiuba/CLP/trabajo final/FIR/src/nco.vhd:11' bound to instance 'nco_inst_out_band' of component 'nco' [E:/Especializacion_fiuba/CLP/trabajo final/FIR/src/filter_VIO.vhd:104]
+INFO: [Synth 8-3491] module 'FIR_Notch' declared at 'E:/Especializacion_fiuba/CLP/trabajo final/FIR/src/filter.vhd:6' bound to instance 'filter_DUT' of component 'FIR_Notch' [E:/Especializacion_fiuba/CLP/trabajo final/FIR/src/filter_VIO.vhd:129]
+INFO: [Synth 8-638] synthesizing module 'FIR_Notch' [E:/Especializacion_fiuba/CLP/trabajo final/FIR/src/filter.vhd:16]
+INFO: [Synth 8-638] synthesizing module 'shift_register' [E:/Especializacion_fiuba/CLP/trabajo final/FIR/src/shift_register.vhd:19]
+	Parameter N bound to: 59 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'shift_register' (5#1) [E:/Especializacion_fiuba/CLP/trabajo final/FIR/src/shift_register.vhd:19]
+INFO: [Synth 8-638] synthesizing module 'multiplier' [E:/Especializacion_fiuba/CLP/trabajo final/FIR/src/multiplier.vhd:15]
+INFO: [Synth 8-256] done synthesizing module 'multiplier' (6#1) [E:/Especializacion_fiuba/CLP/trabajo final/FIR/src/multiplier.vhd:15]
+INFO: [Synth 8-638] synthesizing module 'adder' [E:/Especializacion_fiuba/CLP/trabajo final/FIR/src/adder.vhd:18]
+	Parameter N bound to: 59 - type: integer 
+WARNING: [Synth 8-6014] Unused sequential element acc_reg was removed.  [E:/Especializacion_fiuba/CLP/trabajo final/FIR/src/adder.vhd:26]
+INFO: [Synth 8-256] done synthesizing module 'adder' (7#1) [E:/Especializacion_fiuba/CLP/trabajo final/FIR/src/adder.vhd:18]
+INFO: [Synth 8-256] done synthesizing module 'FIR_Notch' (8#1) [E:/Especializacion_fiuba/CLP/trabajo final/FIR/src/filter.vhd:16]
+	Parameter N bound to: 10 - type: integer 
+INFO: [Synth 8-3491] module 'gen_enable' declared at 'E:/Especializacion_fiuba/CLP/trabajo final/FIR/src/generate_enable.vhd:5' bound to instance 'gen_ena' of component 'gen_enable' [E:/Especializacion_fiuba/CLP/trabajo final/FIR/src/filter_VIO.vhd:139]
+INFO: [Synth 8-638] synthesizing module 'gen_enable' [E:/Especializacion_fiuba/CLP/trabajo final/FIR/src/generate_enable.vhd:16]
+	Parameter N bound to: 10 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'gen_enable' (9#1) [E:/Especializacion_fiuba/CLP/trabajo final/FIR/src/generate_enable.vhd:16]
+INFO: [Synth 8-3491] module 'vio_0' declared at 'E:/Especializacion_fiuba/CLP/trabajo final/FIR/sintesis/filter/filter.runs/synth_1/.Xil/Vivado-14544-DESKTOP-7JRIDGE/realtime/vio_0_stub.vhdl:5' bound to instance 'VIO' of component 'vio_0' [E:/Especializacion_fiuba/CLP/trabajo final/FIR/src/filter_VIO.vhd:149]
+INFO: [Synth 8-638] synthesizing module 'vio_0' [E:/Especializacion_fiuba/CLP/trabajo final/FIR/sintesis/filter/filter.runs/synth_1/.Xil/Vivado-14544-DESKTOP-7JRIDGE/realtime/vio_0_stub.vhdl:14]
+INFO: [Synth 8-3491] module 'ila_0' declared at 'E:/Especializacion_fiuba/CLP/trabajo final/FIR/sintesis/filter/filter.runs/synth_1/.Xil/Vivado-14544-DESKTOP-7JRIDGE/realtime/ila_0_stub.vhdl:5' bound to instance 'ILA' of component 'ila_0' [E:/Especializacion_fiuba/CLP/trabajo final/FIR/src/filter_VIO.vhd:156]
+INFO: [Synth 8-638] synthesizing module 'ila_0' [E:/Especializacion_fiuba/CLP/trabajo final/FIR/sintesis/filter/filter.runs/synth_1/.Xil/Vivado-14544-DESKTOP-7JRIDGE/realtime/ila_0_stub.vhdl:14]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'nco_inst_out_band'. This will prevent further optimization [E:/Especializacion_fiuba/CLP/trabajo final/FIR/src/filter_VIO.vhd:104]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'filter_DUT'. This will prevent further optimization [E:/Especializacion_fiuba/CLP/trabajo final/FIR/src/filter_VIO.vhd:129]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'nco_inst_in_band'. This will prevent further optimization [E:/Especializacion_fiuba/CLP/trabajo final/FIR/src/filter_VIO.vhd:89]
+INFO: [Synth 8-256] done synthesizing module 'filter_VIO' (10#1) [E:/Especializacion_fiuba/CLP/trabajo final/FIR/src/filter_VIO.vhd:12]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[0][31]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[0][30]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[0][29]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[0][28]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[0][27]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[0][26]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[0][25]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[0][24]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[1][31]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[1][30]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[1][29]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[1][28]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[1][27]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[1][26]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[1][25]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[1][24]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[2][31]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[2][30]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[2][29]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[2][28]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[2][27]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[2][26]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[2][25]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[2][24]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[3][31]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[3][30]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[3][29]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[3][28]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[3][27]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[3][26]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[3][25]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[3][24]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[4][31]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[4][30]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[4][29]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[4][28]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[4][27]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[4][26]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[4][25]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[4][24]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[5][31]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[5][30]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[5][29]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[5][28]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[5][27]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[5][26]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[5][25]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[5][24]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[6][31]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[6][30]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[6][29]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[6][28]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[6][27]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[6][26]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[6][25]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[6][24]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[7][31]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[7][30]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[7][29]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[7][28]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[7][27]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[7][26]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[7][25]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[7][24]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[8][31]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[8][30]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[8][29]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[8][28]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[8][27]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[8][26]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[8][25]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[8][24]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[9][31]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[9][30]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[9][29]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[9][28]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[9][27]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[9][26]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[9][25]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[9][24]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[10][31]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[10][30]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[10][29]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[10][28]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[10][27]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[10][26]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[10][25]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[10][24]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[11][31]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[11][30]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[11][29]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[11][28]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[11][27]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[11][26]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[11][25]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[11][24]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[12][31]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[12][30]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[12][29]
+WARNING: [Synth 8-3331] design adder has unconnected port data_in[12][28]
+INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:01:19 ; elapsed = 00:01:42 . Memory (MB): peak = 758.074 ; gain = 446.234
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:19 ; elapsed = 00:01:43 . Memory (MB): peak = 758.074 ; gain = 446.234
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:01:19 ; elapsed = 00:01:43 . Memory (MB): peak = 758.074 ; gain = 446.234
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z010clg400-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [e:/Especializacion_fiuba/CLP/trabajo final/FIR/sintesis/filter/filter.srcs/sources_1/ip/vio_0/vio_0/vio_0_in_context.xdc] for cell 'VIO'
+Finished Parsing XDC File [e:/Especializacion_fiuba/CLP/trabajo final/FIR/sintesis/filter/filter.srcs/sources_1/ip/vio_0/vio_0/vio_0_in_context.xdc] for cell 'VIO'
+Parsing XDC File [e:/Especializacion_fiuba/CLP/trabajo final/FIR/sintesis/filter/filter.srcs/sources_1/ip/ila_0/ila_0/ila_0_in_context.xdc] for cell 'ILA'
+Finished Parsing XDC File [e:/Especializacion_fiuba/CLP/trabajo final/FIR/sintesis/filter/filter.srcs/sources_1/ip/ila_0/ila_0/ila_0_in_context.xdc] for cell 'ILA'
+Parsing XDC File [E:/Especializacion_fiuba/CLP/trabajo final/FIR/src/Arty-Z7-10-Master.xdc]
+Finished Parsing XDC File [E:/Especializacion_fiuba/CLP/trabajo final/FIR/src/Arty-Z7-10-Master.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [E:/Especializacion_fiuba/CLP/trabajo final/FIR/src/Arty-Z7-10-Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/filter_VIO_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/filter_VIO_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 827.910 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:01:34 ; elapsed = 00:02:01 . Memory (MB): peak = 827.910 ; gain = 516.070
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z010clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:01:34 ; elapsed = 00:02:01 . Memory (MB): peak = 827.910 ; gain = 516.070
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property DONT_TOUCH = true for VIO. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for ILA. (constraint file  auto generated constraint, line ).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:01:34 ; elapsed = 00:02:01 . Memory (MB): peak = 827.910 ; gain = 516.070
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [E:/Especializacion_fiuba/CLP/trabajo final/FIR/src/acum_fase.vhd:32]
+WARNING: [Synth 8-6040] Register addr1_r_reg driving address of a ROM cannot be packed in BRAM/URAM because of presence of initial value.
+WARNING: [Synth 8-6040] Register addr2_r_reg driving address of a ROM cannot be packed in BRAM/URAM because of presence of initial value.
+INFO: [Synth 8-5544] ROM "ena_o" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:45 ; elapsed = 00:02:15 . Memory (MB): peak = 827.910 ; gain = 516.070
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	  59 Input     24 Bit       Adders := 1     
+	   2 Input     15 Bit       Adders := 2     
+	   3 Input     15 Bit       Adders := 2     
+	   2 Input     12 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 2     
++---Registers : 
+	               32 Bit    Registers := 59    
+	               24 Bit    Registers := 1     
+	               15 Bit    Registers := 2     
+	               13 Bit    Registers := 4     
+	               12 Bit    Registers := 60    
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Multipliers : 
+	                12x32  Multipliers := 59    
++---Muxes : 
+	   2 Input     15 Bit        Muxes := 2     
+	   2 Input     13 Bit        Muxes := 2     
+	   2 Input     11 Bit        Muxes := 4     
+	   2 Input      6 Bit        Muxes := 2     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module Acum_Fase 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     15 Bit       Adders := 1     
+	   3 Input     15 Bit       Adders := 1     
++---Registers : 
+	               15 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     15 Bit        Muxes := 1     
+	   2 Input      6 Bit        Muxes := 1     
+Module Sin_Rom 
+Detailed RTL Component Info : 
++---Registers : 
+	               13 Bit    Registers := 2     
+Module Sin_Cos 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input      1 Bit         XORs := 1     
++---Muxes : 
+	   2 Input     13 Bit        Muxes := 1     
+	   2 Input     11 Bit        Muxes := 2     
+Module shift_register 
+Detailed RTL Component Info : 
++---Registers : 
+	               12 Bit    Registers := 59    
+Module adder 
+Detailed RTL Component Info : 
++---Adders : 
+	  59 Input     24 Bit       Adders := 1     
++---Registers : 
+	               24 Bit    Registers := 1     
+	               12 Bit    Registers := 1     
+Module multiplier 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 1     
++---Multipliers : 
+	                12x32  Multipliers := 1     
+Module FIR_Notch 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     12 Bit       Adders := 1     
+Module gen_enable 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      4 Bit       Adders := 1     
++---Registers : 
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 80 (col length:40)
+BRAMs: 120 (col length: RAMB18 40 RAMB36 20)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+WARNING: [Synth 8-6040] Register addr1_r_reg driving address of a ROM cannot be packed in BRAM/URAM because of presence of initial value.
+WARNING: [Synth 8-6040] Register addr2_r_reg driving address of a ROM cannot be packed in BRAM/URAM because of presence of initial value.
+WARNING: [Synth 8-6040] Register addr1_r_reg driving address of a ROM cannot be packed in BRAM/URAM because of presence of initial value.
+WARNING: [Synth 8-6040] Register addr2_r_reg driving address of a ROM cannot be packed in BRAM/URAM because of presence of initial value.
+DSP Report: Generating DSP gen_mult[16].MULTi/internal_result_reg, operation Mode is: (A''*(B:0x3ffef))'.
+DSP Report: register SHIFT_REG/regs_reg[15] is absorbed into DSP gen_mult[16].MULTi/internal_result_reg.
+DSP Report: register SHIFT_REG/regs_reg[16] is absorbed into DSP gen_mult[16].MULTi/internal_result_reg.
+DSP Report: register gen_mult[16].MULTi/internal_result_reg is absorbed into DSP gen_mult[16].MULTi/internal_result_reg.
+DSP Report: operator gen_mult[16].MULTi/internal_result0 is absorbed into DSP gen_mult[16].MULTi/internal_result_reg.
+DSP Report: Generating DSP gen_mult[21].MULTi/internal_result_reg, operation Mode is: (A''*(B:0x23))'.
+DSP Report: register SHIFT_REG/regs_reg[20] is absorbed into DSP gen_mult[21].MULTi/internal_result_reg.
+DSP Report: register SHIFT_REG/regs_reg[21] is absorbed into DSP gen_mult[21].MULTi/internal_result_reg.
+DSP Report: register gen_mult[21].MULTi/internal_result_reg is absorbed into DSP gen_mult[21].MULTi/internal_result_reg.
+DSP Report: operator gen_mult[21].MULTi/internal_result0 is absorbed into DSP gen_mult[21].MULTi/internal_result_reg.
+DSP Report: Generating DSP gen_mult[22].MULTi/internal_result_reg, operation Mode is: (ACIN2*(B:0x3b))'.
+DSP Report: register SHIFT_REG/regs_reg[22] is absorbed into DSP gen_mult[22].MULTi/internal_result_reg.
+DSP Report: register gen_mult[22].MULTi/internal_result_reg is absorbed into DSP gen_mult[22].MULTi/internal_result_reg.
+DSP Report: operator gen_mult[22].MULTi/internal_result0 is absorbed into DSP gen_mult[22].MULTi/internal_result_reg.
+DSP Report: Generating DSP gen_mult[23].MULTi/internal_result_reg, operation Mode is: (ACIN2*(B:0x57))'.
+DSP Report: register SHIFT_REG/regs_reg[23] is absorbed into DSP gen_mult[23].MULTi/internal_result_reg.
+DSP Report: register gen_mult[23].MULTi/internal_result_reg is absorbed into DSP gen_mult[23].MULTi/internal_result_reg.
+DSP Report: operator gen_mult[23].MULTi/internal_result0 is absorbed into DSP gen_mult[23].MULTi/internal_result_reg.
+DSP Report: Generating DSP gen_mult[24].MULTi/internal_result_reg, operation Mode is: (ACIN2*(B:0x74))'.
+DSP Report: register SHIFT_REG/regs_reg[24] is absorbed into DSP gen_mult[24].MULTi/internal_result_reg.
+DSP Report: register gen_mult[24].MULTi/internal_result_reg is absorbed into DSP gen_mult[24].MULTi/internal_result_reg.
+DSP Report: operator gen_mult[24].MULTi/internal_result0 is absorbed into DSP gen_mult[24].MULTi/internal_result_reg.
+DSP Report: Generating DSP gen_mult[25].MULTi/internal_result_reg, operation Mode is: (ACIN2*(B:0x8f))'.
+DSP Report: register SHIFT_REG/regs_reg[25] is absorbed into DSP gen_mult[25].MULTi/internal_result_reg.
+DSP Report: register gen_mult[25].MULTi/internal_result_reg is absorbed into DSP gen_mult[25].MULTi/internal_result_reg.
+DSP Report: operator gen_mult[25].MULTi/internal_result0 is absorbed into DSP gen_mult[25].MULTi/internal_result_reg.
+DSP Report: Generating DSP gen_mult[26].MULTi/internal_result_reg, operation Mode is: (ACIN2*(B:0xa8))'.
+DSP Report: register SHIFT_REG/regs_reg[26] is absorbed into DSP gen_mult[26].MULTi/internal_result_reg.
+DSP Report: register gen_mult[26].MULTi/internal_result_reg is absorbed into DSP gen_mult[26].MULTi/internal_result_reg.
+DSP Report: operator gen_mult[26].MULTi/internal_result0 is absorbed into DSP gen_mult[26].MULTi/internal_result_reg.
+DSP Report: Generating DSP gen_mult[27].MULTi/internal_result_reg, operation Mode is: (ACIN2*(B:0xbc))'.
+DSP Report: register SHIFT_REG/regs_reg[27] is absorbed into DSP gen_mult[27].MULTi/internal_result_reg.
+DSP Report: register gen_mult[27].MULTi/internal_result_reg is absorbed into DSP gen_mult[27].MULTi/internal_result_reg.
+DSP Report: operator gen_mult[27].MULTi/internal_result0 is absorbed into DSP gen_mult[27].MULTi/internal_result_reg.
+DSP Report: Generating DSP gen_mult[28].MULTi/internal_result_reg, operation Mode is: (ACIN2*(B:0xc9))'.
+DSP Report: register SHIFT_REG/regs_reg[28] is absorbed into DSP gen_mult[28].MULTi/internal_result_reg.
+DSP Report: register gen_mult[28].MULTi/internal_result_reg is absorbed into DSP gen_mult[28].MULTi/internal_result_reg.
+DSP Report: operator gen_mult[28].MULTi/internal_result0 is absorbed into DSP gen_mult[28].MULTi/internal_result_reg.
+DSP Report: Generating DSP gen_mult[29].MULTi/internal_result_reg, operation Mode is: (ACIN2*(B:0xcd))'.
+DSP Report: register SHIFT_REG/regs_reg[29] is absorbed into DSP gen_mult[29].MULTi/internal_result_reg.
+DSP Report: register gen_mult[29].MULTi/internal_result_reg is absorbed into DSP gen_mult[29].MULTi/internal_result_reg.
+DSP Report: operator gen_mult[29].MULTi/internal_result0 is absorbed into DSP gen_mult[29].MULTi/internal_result_reg.
+DSP Report: Generating DSP gen_mult[30].MULTi/internal_result_reg, operation Mode is: (ACIN2*(B:0xc9))'.
+DSP Report: register SHIFT_REG/regs_reg[30] is absorbed into DSP gen_mult[30].MULTi/internal_result_reg.
+DSP Report: register gen_mult[30].MULTi/internal_result_reg is absorbed into DSP gen_mult[30].MULTi/internal_result_reg.
+DSP Report: operator gen_mult[30].MULTi/internal_result0 is absorbed into DSP gen_mult[30].MULTi/internal_result_reg.
+DSP Report: Generating DSP gen_mult[31].MULTi/internal_result_reg, operation Mode is: (ACIN2*(B:0xbc))'.
+DSP Report: register SHIFT_REG/regs_reg[31] is absorbed into DSP gen_mult[31].MULTi/internal_result_reg.
+DSP Report: register gen_mult[31].MULTi/internal_result_reg is absorbed into DSP gen_mult[31].MULTi/internal_result_reg.
+DSP Report: operator gen_mult[31].MULTi/internal_result0 is absorbed into DSP gen_mult[31].MULTi/internal_result_reg.
+DSP Report: Generating DSP gen_mult[32].MULTi/internal_result_reg, operation Mode is: (ACIN2*(B:0xa8))'.
+DSP Report: register SHIFT_REG/regs_reg[32] is absorbed into DSP gen_mult[32].MULTi/internal_result_reg.
+DSP Report: register gen_mult[32].MULTi/internal_result_reg is absorbed into DSP gen_mult[32].MULTi/internal_result_reg.
+DSP Report: operator gen_mult[32].MULTi/internal_result0 is absorbed into DSP gen_mult[32].MULTi/internal_result_reg.
+DSP Report: Generating DSP gen_mult[33].MULTi/internal_result_reg, operation Mode is: (ACIN2*(B:0x8f))'.
+DSP Report: register SHIFT_REG/regs_reg[33] is absorbed into DSP gen_mult[33].MULTi/internal_result_reg.
+DSP Report: register gen_mult[33].MULTi/internal_result_reg is absorbed into DSP gen_mult[33].MULTi/internal_result_reg.
+DSP Report: operator gen_mult[33].MULTi/internal_result0 is absorbed into DSP gen_mult[33].MULTi/internal_result_reg.
+DSP Report: Generating DSP gen_mult[34].MULTi/internal_result_reg, operation Mode is: (ACIN2*(B:0x74))'.
+DSP Report: register SHIFT_REG/regs_reg[34] is absorbed into DSP gen_mult[34].MULTi/internal_result_reg.
+DSP Report: register gen_mult[34].MULTi/internal_result_reg is absorbed into DSP gen_mult[34].MULTi/internal_result_reg.
+DSP Report: operator gen_mult[34].MULTi/internal_result0 is absorbed into DSP gen_mult[34].MULTi/internal_result_reg.
+DSP Report: Generating DSP gen_mult[35].MULTi/internal_result_reg, operation Mode is: (ACIN2*(B:0x57))'.
+DSP Report: register SHIFT_REG/regs_reg[35] is absorbed into DSP gen_mult[35].MULTi/internal_result_reg.
+DSP Report: register gen_mult[35].MULTi/internal_result_reg is absorbed into DSP gen_mult[35].MULTi/internal_result_reg.
+DSP Report: operator gen_mult[35].MULTi/internal_result0 is absorbed into DSP gen_mult[35].MULTi/internal_result_reg.
+DSP Report: Generating DSP gen_mult[36].MULTi/internal_result_reg, operation Mode is: (ACIN2*(B:0x3b))'.
+DSP Report: register SHIFT_REG/regs_reg[36] is absorbed into DSP gen_mult[36].MULTi/internal_result_reg.
+DSP Report: register gen_mult[36].MULTi/internal_result_reg is absorbed into DSP gen_mult[36].MULTi/internal_result_reg.
+DSP Report: operator gen_mult[36].MULTi/internal_result0 is absorbed into DSP gen_mult[36].MULTi/internal_result_reg.
+DSP Report: Generating DSP gen_mult[37].MULTi/internal_result_reg, operation Mode is: (ACIN2*(B:0x23))'.
+DSP Report: register SHIFT_REG/regs_reg[37] is absorbed into DSP gen_mult[37].MULTi/internal_result_reg.
+DSP Report: register gen_mult[37].MULTi/internal_result_reg is absorbed into DSP gen_mult[37].MULTi/internal_result_reg.
+DSP Report: operator gen_mult[37].MULTi/internal_result0 is absorbed into DSP gen_mult[37].MULTi/internal_result_reg.
+DSP Report: Generating DSP gen_mult[42].MULTi/internal_result_reg, operation Mode is: (A''*(B:0x3ffef))'.
+DSP Report: register SHIFT_REG/regs_reg[41] is absorbed into DSP gen_mult[42].MULTi/internal_result_reg.
+DSP Report: register SHIFT_REG/regs_reg[42] is absorbed into DSP gen_mult[42].MULTi/internal_result_reg.
+DSP Report: register gen_mult[42].MULTi/internal_result_reg is absorbed into DSP gen_mult[42].MULTi/internal_result_reg.
+DSP Report: operator gen_mult[42].MULTi/internal_result0 is absorbed into DSP gen_mult[42].MULTi/internal_result_reg.
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[11].MULTi/internal_result_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[9].MULTi/internal_result_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[11].MULTi/internal_result_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[9].MULTi/internal_result_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[9].MULTi/internal_result_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[9].MULTi/internal_result_reg[3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[9].MULTi/internal_result_reg[4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[9].MULTi/internal_result_reg[5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[9].MULTi/internal_result_reg[6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[9].MULTi/internal_result_reg[7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[9].MULTi/internal_result_reg[8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[9].MULTi/internal_result_reg[9] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[9].MULTi/internal_result_reg[10] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[9].MULTi/internal_result_reg[11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[9].MULTi/internal_result_reg[12] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[3].MULTi/internal_result_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[4].MULTi/internal_result_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[3].MULTi/internal_result_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[4].MULTi/internal_result_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[3].MULTi/internal_result_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[4].MULTi/internal_result_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[3].MULTi/internal_result_reg[3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[4].MULTi/internal_result_reg[3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[3].MULTi/internal_result_reg[4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[4].MULTi/internal_result_reg[4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[3].MULTi/internal_result_reg[5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[4].MULTi/internal_result_reg[5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[3].MULTi/internal_result_reg[6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[4].MULTi/internal_result_reg[6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[3].MULTi/internal_result_reg[7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[4].MULTi/internal_result_reg[7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[3].MULTi/internal_result_reg[8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[4].MULTi/internal_result_reg[8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[3].MULTi/internal_result_reg[9] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[4].MULTi/internal_result_reg[9] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[3].MULTi/internal_result_reg[10] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[4].MULTi/internal_result_reg[10] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[3].MULTi/internal_result_reg[11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[4].MULTi/internal_result_reg[11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[4].MULTi/internal_result_reg[12] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[3].MULTi/internal_result_reg[12] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[2].MULTi/internal_result_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[1].MULTi/internal_result_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[2].MULTi/internal_result_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[1].MULTi/internal_result_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[2].MULTi/internal_result_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[1].MULTi/internal_result_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[2].MULTi/internal_result_reg[3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[1].MULTi/internal_result_reg[3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[2].MULTi/internal_result_reg[4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[1].MULTi/internal_result_reg[4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[2].MULTi/internal_result_reg[5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[1].MULTi/internal_result_reg[5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[2].MULTi/internal_result_reg[6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[1].MULTi/internal_result_reg[6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[2].MULTi/internal_result_reg[7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[1].MULTi/internal_result_reg[7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[2].MULTi/internal_result_reg[8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[1].MULTi/internal_result_reg[8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[2].MULTi/internal_result_reg[9] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[1].MULTi/internal_result_reg[9] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[2].MULTi/internal_result_reg[10] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[1].MULTi/internal_result_reg[10] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[2].MULTi/internal_result_reg[11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[1].MULTi/internal_result_reg[11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[2].MULTi/internal_result_reg[12] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[1].MULTi/internal_result_reg[12] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[0].MULTi/internal_result_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[57].MULTi/internal_result_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[58].MULTi/internal_result_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[0].MULTi/internal_result_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[57].MULTi/internal_result_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[58].MULTi/internal_result_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[0].MULTi/internal_result_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[57].MULTi/internal_result_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[58].MULTi/internal_result_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[0].MULTi/internal_result_reg[3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[57].MULTi/internal_result_reg[3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[58].MULTi/internal_result_reg[3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[0].MULTi/internal_result_reg[4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[57].MULTi/internal_result_reg[4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[58].MULTi/internal_result_reg[4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[0].MULTi/internal_result_reg[5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[57].MULTi/internal_result_reg[5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[58].MULTi/internal_result_reg[5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[0].MULTi/internal_result_reg[6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[57].MULTi/internal_result_reg[6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[58].MULTi/internal_result_reg[6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[0].MULTi/internal_result_reg[7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[57].MULTi/internal_result_reg[7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[58].MULTi/internal_result_reg[7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[0].MULTi/internal_result_reg[8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[57].MULTi/internal_result_reg[8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[58].MULTi/internal_result_reg[8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[0].MULTi/internal_result_reg[9] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[57].MULTi/internal_result_reg[9] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[58].MULTi/internal_result_reg[9] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[0].MULTi/internal_result_reg[10] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[57].MULTi/internal_result_reg[10] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter_DUT/\gen_mult[58].MULTi/internal_result_reg[10] )
+INFO: [Common 17-14] Message 'Synth 8-3333' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3886] merging instance 'filter_DUT/SUM/sum_s_reg[12]' (FDE) to 'filter_DUT/SUM/sum_s_reg[23]'
+INFO: [Synth 8-3886] merging instance 'filter_DUT/SUM/sum_s_reg[13]' (FDE) to 'filter_DUT/SUM/sum_s_reg[23]'
+INFO: [Synth 8-3886] merging instance 'filter_DUT/SUM/sum_s_reg[14]' (FDE) to 'filter_DUT/SUM/sum_s_reg[23]'
+INFO: [Synth 8-3886] merging instance 'filter_DUT/SUM/sum_s_reg[15]' (FDE) to 'filter_DUT/SUM/sum_s_reg[23]'
+INFO: [Synth 8-3886] merging instance 'filter_DUT/SUM/sum_s_reg[16]' (FDE) to 'filter_DUT/SUM/sum_s_reg[23]'
+INFO: [Synth 8-3886] merging instance 'filter_DUT/SUM/sum_s_reg[17]' (FDE) to 'filter_DUT/SUM/sum_s_reg[23]'
+INFO: [Synth 8-3886] merging instance 'filter_DUT/SUM/sum_s_reg[18]' (FDE) to 'filter_DUT/SUM/sum_s_reg[23]'
+INFO: [Synth 8-3886] merging instance 'filter_DUT/SUM/sum_s_reg[19]' (FDE) to 'filter_DUT/SUM/sum_s_reg[23]'
+INFO: [Synth 8-3886] merging instance 'filter_DUT/SUM/sum_s_reg[20]' (FDE) to 'filter_DUT/SUM/sum_s_reg[23]'
+INFO: [Synth 8-3886] merging instance 'filter_DUT/SUM/sum_s_reg[21]' (FDE) to 'filter_DUT/SUM/sum_s_reg[23]'
+INFO: [Synth 8-3886] merging instance 'filter_DUT/SUM/sum_s_reg[22]' (FDE) to 'filter_DUT/SUM/sum_s_reg[23]'
+WARNING: [Synth 8-3332] Sequential element (sum_s_reg[11]) is unused and will be removed from module adder.
+WARNING: [Synth 8-3332] Sequential element (gen_mult[0].MULTi/internal_result_reg[12]) is unused and will be removed from module FIR_Notch.
+WARNING: [Synth 8-3332] Sequential element (gen_mult[0].MULTi/internal_result_reg[11]) is unused and will be removed from module FIR_Notch.
+WARNING: [Synth 8-3332] Sequential element (gen_mult[0].MULTi/internal_result_reg[10]) is unused and will be removed from module FIR_Notch.
+WARNING: [Synth 8-3332] Sequential element (gen_mult[0].MULTi/internal_result_reg[9]) is unused and will be removed from module FIR_Notch.
+WARNING: [Synth 8-3332] Sequential element (gen_mult[0].MULTi/internal_result_reg[8]) is unused and will be removed from module FIR_Notch.
+WARNING: [Synth 8-3332] Sequential element (gen_mult[0].MULTi/internal_result_reg[7]) is unused and will be removed from module FIR_Notch.
+WARNING: [Synth 8-3332] Sequential element (gen_mult[0].MULTi/internal_result_reg[6]) is unused and will be removed from module FIR_Notch.
+WARNING: [Synth 8-3332] Sequential element (gen_mult[0].MULTi/internal_result_reg[5]) is unused and will be removed from module FIR_Notch.
+WARNING: [Synth 8-3332] Sequential element (gen_mult[0].MULTi/internal_result_reg[4]) is unused and will be removed from module FIR_Notch.
+WARNING: [Synth 8-3332] Sequential element (gen_mult[0].MULTi/internal_result_reg[3]) is unused and will be removed from module FIR_Notch.
+WARNING: [Synth 8-3332] Sequential element (gen_mult[0].MULTi/internal_result_reg[2]) is unused and will be removed from module FIR_Notch.
+WARNING: [Synth 8-3332] Sequential element (gen_mult[0].MULTi/internal_result_reg[1]) is unused and will be removed from module FIR_Notch.
+WARNING: [Synth 8-3332] Sequential element (gen_mult[0].MULTi/internal_result_reg[0]) is unused and will be removed from module FIR_Notch.
+WARNING: [Synth 8-3332] Sequential element (gen_mult[1].MULTi/internal_result_reg[12]) is unused and will be removed from module FIR_Notch.
+WARNING: [Synth 8-3332] Sequential element (gen_mult[1].MULTi/internal_result_reg[11]) is unused and will be removed from module FIR_Notch.
+WARNING: [Synth 8-3332] Sequential element (gen_mult[1].MULTi/internal_result_reg[10]) is unused and will be removed from module FIR_Notch.
+WARNING: [Synth 8-3332] Sequential element (gen_mult[1].MULTi/internal_result_reg[9]) is unused and will be removed from module FIR_Notch.
+WARNING: [Synth 8-3332] Sequential element (gen_mult[1].MULTi/internal_result_reg[8]) is unused and will be removed from module FIR_Notch.
+WARNING: [Synth 8-3332] Sequential element (gen_mult[1].MULTi/internal_result_reg[7]) is unused and will be removed from module FIR_Notch.
+WARNING: [Synth 8-3332] Sequential element (gen_mult[1].MULTi/internal_result_reg[6]) is unused and will be removed from module FIR_Notch.
+WARNING: [Synth 8-3332] Sequential element (gen_mult[1].MULTi/internal_result_reg[5]) is unused and will be removed from module FIR_Notch.
+WARNING: [Synth 8-3332] Sequential element (gen_mult[1].MULTi/internal_result_reg[4]) is unused and will be removed from module FIR_Notch.
+WARNING: [Synth 8-3332] Sequential element (gen_mult[1].MULTi/internal_result_reg[3]) is unused and will be removed from module FIR_Notch.
+WARNING: [Synth 8-3332] Sequential element (gen_mult[1].MULTi/internal_result_reg[2]) is unused and will be removed from module FIR_Notch.
+WARNING: [Synth 8-3332] Sequential element (gen_mult[1].MULTi/internal_result_reg[1]) is unused and will be removed from module FIR_Notch.
+WARNING: [Synth 8-3332] Sequential element (gen_mult[1].MULTi/internal_result_reg[0]) is unused and will be removed from module FIR_Notch.
+WARNING: [Synth 8-3332] Sequential element (gen_mult[2].MULTi/internal_result_reg[12]) is unused and will be removed from module FIR_Notch.
+WARNING: [Synth 8-3332] Sequential element (gen_mult[2].MULTi/internal_result_reg[11]) is unused and will be removed from module FIR_Notch.
+WARNING: [Synth 8-3332] Sequential element (gen_mult[2].MULTi/internal_result_reg[10]) is unused and will be removed from module FIR_Notch.
+WARNING: [Synth 8-3332] Sequential element (gen_mult[2].MULTi/internal_result_reg[9]) is unused and will be removed from module FIR_Notch.
+WARNING: [Synth 8-3332] Sequential element (gen_mult[2].MULTi/internal_result_reg[8]) is unused and will be removed from module FIR_Notch.
+WARNING: [Synth 8-3332] Sequential element (gen_mult[2].MULTi/internal_result_reg[7]) is unused and will be removed from module FIR_Notch.
+WARNING: [Synth 8-3332] Sequential element (gen_mult[2].MULTi/internal_result_reg[6]) is unused and will be removed from module FIR_Notch.
+WARNING: [Synth 8-3332] Sequential element (gen_mult[2].MULTi/internal_result_reg[5]) is unused and will be removed from module FIR_Notch.
+WARNING: [Synth 8-3332] Sequential element (gen_mult[2].MULTi/internal_result_reg[4]) is unused and will be removed from module FIR_Notch.
+WARNING: [Synth 8-3332] Sequential element (gen_mult[2].MULTi/internal_result_reg[3]) is unused and will be removed from module FIR_Notch.
+WARNING: [Synth 8-3332] Sequential element (gen_mult[2].MULTi/internal_result_reg[2]) is unused and will be removed from module FIR_Notch.
+WARNING: [Synth 8-3332] Sequential element (gen_mult[2].MULTi/internal_result_reg[1]) is unused and will be removed from module FIR_Notch.
+WARNING: [Synth 8-3332] Sequential element (gen_mult[2].MULTi/internal_result_reg[0]) is unused and will be removed from module FIR_Notch.
+WARNING: [Synth 8-3332] Sequential element (gen_mult[3].MULTi/internal_result_reg[12]) is unused and will be removed from module FIR_Notch.
+WARNING: [Synth 8-3332] Sequential element (gen_mult[3].MULTi/internal_result_reg[11]) is unused and will be removed from module FIR_Notch.
+WARNING: [Synth 8-3332] Sequential element (gen_mult[3].MULTi/internal_result_reg[10]) is unused and will be removed from module FIR_Notch.
+WARNING: [Synth 8-3332] Sequential element (gen_mult[3].MULTi/internal_result_reg[9]) is unused and will be removed from module FIR_Notch.
+WARNING: [Synth 8-3332] Sequential element (gen_mult[3].MULTi/internal_result_reg[8]) is unused and will be removed from module FIR_Notch.
+WARNING: [Synth 8-3332] Sequential element (gen_mult[3].MULTi/internal_result_reg[7]) is unused and will be removed from module FIR_Notch.
+WARNING: [Synth 8-3332] Sequential element (gen_mult[3].MULTi/internal_result_reg[6]) is unused and will be removed from module FIR_Notch.
+WARNING: [Synth 8-3332] Sequential element (gen_mult[3].MULTi/internal_result_reg[5]) is unused and will be removed from module FIR_Notch.
+WARNING: [Synth 8-3332] Sequential element (gen_mult[3].MULTi/internal_result_reg[4]) is unused and will be removed from module FIR_Notch.
+WARNING: [Synth 8-3332] Sequential element (gen_mult[3].MULTi/internal_result_reg[3]) is unused and will be removed from module FIR_Notch.
+WARNING: [Synth 8-3332] Sequential element (gen_mult[3].MULTi/internal_result_reg[2]) is unused and will be removed from module FIR_Notch.
+WARNING: [Synth 8-3332] Sequential element (gen_mult[3].MULTi/internal_result_reg[1]) is unused and will be removed from module FIR_Notch.
+WARNING: [Synth 8-3332] Sequential element (gen_mult[3].MULTi/internal_result_reg[0]) is unused and will be removed from module FIR_Notch.
+WARNING: [Synth 8-3332] Sequential element (gen_mult[4].MULTi/internal_result_reg[12]) is unused and will be removed from module FIR_Notch.
+WARNING: [Synth 8-3332] Sequential element (gen_mult[4].MULTi/internal_result_reg[11]) is unused and will be removed from module FIR_Notch.
+WARNING: [Synth 8-3332] Sequential element (gen_mult[4].MULTi/internal_result_reg[10]) is unused and will be removed from module FIR_Notch.
+WARNING: [Synth 8-3332] Sequential element (gen_mult[4].MULTi/internal_result_reg[9]) is unused and will be removed from module FIR_Notch.
+WARNING: [Synth 8-3332] Sequential element (gen_mult[4].MULTi/internal_result_reg[8]) is unused and will be removed from module FIR_Notch.
+WARNING: [Synth 8-3332] Sequential element (gen_mult[4].MULTi/internal_result_reg[7]) is unused and will be removed from module FIR_Notch.
+WARNING: [Synth 8-3332] Sequential element (gen_mult[4].MULTi/internal_result_reg[6]) is unused and will be removed from module FIR_Notch.
+WARNING: [Synth 8-3332] Sequential element (gen_mult[4].MULTi/internal_result_reg[5]) is unused and will be removed from module FIR_Notch.
+WARNING: [Synth 8-3332] Sequential element (gen_mult[4].MULTi/internal_result_reg[4]) is unused and will be removed from module FIR_Notch.
+WARNING: [Synth 8-3332] Sequential element (gen_mult[4].MULTi/internal_result_reg[3]) is unused and will be removed from module FIR_Notch.
+WARNING: [Synth 8-3332] Sequential element (gen_mult[4].MULTi/internal_result_reg[2]) is unused and will be removed from module FIR_Notch.
+WARNING: [Synth 8-3332] Sequential element (gen_mult[4].MULTi/internal_result_reg[1]) is unused and will be removed from module FIR_Notch.
+WARNING: [Synth 8-3332] Sequential element (gen_mult[4].MULTi/internal_result_reg[0]) is unused and will be removed from module FIR_Notch.
+WARNING: [Synth 8-3332] Sequential element (gen_mult[9].MULTi/internal_result_reg[12]) is unused and will be removed from module FIR_Notch.
+WARNING: [Synth 8-3332] Sequential element (gen_mult[9].MULTi/internal_result_reg[11]) is unused and will be removed from module FIR_Notch.
+WARNING: [Synth 8-3332] Sequential element (gen_mult[9].MULTi/internal_result_reg[10]) is unused and will be removed from module FIR_Notch.
+WARNING: [Synth 8-3332] Sequential element (gen_mult[9].MULTi/internal_result_reg[9]) is unused and will be removed from module FIR_Notch.
+WARNING: [Synth 8-3332] Sequential element (gen_mult[9].MULTi/internal_result_reg[8]) is unused and will be removed from module FIR_Notch.
+WARNING: [Synth 8-3332] Sequential element (gen_mult[9].MULTi/internal_result_reg[7]) is unused and will be removed from module FIR_Notch.
+WARNING: [Synth 8-3332] Sequential element (gen_mult[9].MULTi/internal_result_reg[6]) is unused and will be removed from module FIR_Notch.
+WARNING: [Synth 8-3332] Sequential element (gen_mult[9].MULTi/internal_result_reg[5]) is unused and will be removed from module FIR_Notch.
+WARNING: [Synth 8-3332] Sequential element (gen_mult[9].MULTi/internal_result_reg[4]) is unused and will be removed from module FIR_Notch.
+WARNING: [Synth 8-3332] Sequential element (gen_mult[9].MULTi/internal_result_reg[3]) is unused and will be removed from module FIR_Notch.
+WARNING: [Synth 8-3332] Sequential element (gen_mult[9].MULTi/internal_result_reg[2]) is unused and will be removed from module FIR_Notch.
+WARNING: [Synth 8-3332] Sequential element (gen_mult[9].MULTi/internal_result_reg[1]) is unused and will be removed from module FIR_Notch.
+WARNING: [Synth 8-3332] Sequential element (gen_mult[9].MULTi/internal_result_reg[0]) is unused and will be removed from module FIR_Notch.
+WARNING: [Synth 8-3332] Sequential element (gen_mult[11].MULTi/internal_result_reg[1]) is unused and will be removed from module FIR_Notch.
+WARNING: [Synth 8-3332] Sequential element (gen_mult[11].MULTi/internal_result_reg[0]) is unused and will be removed from module FIR_Notch.
+WARNING: [Synth 8-3332] Sequential element (gen_mult[13].MULTi/internal_result_reg[0]) is unused and will be removed from module FIR_Notch.
+WARNING: [Synth 8-3332] Sequential element (gen_mult[14].MULTi/internal_result_reg[0]) is unused and will be removed from module FIR_Notch.
+WARNING: [Synth 8-3332] Sequential element (gen_mult[15].MULTi/internal_result_reg[3]) is unused and will be removed from module FIR_Notch.
+WARNING: [Synth 8-3332] Sequential element (gen_mult[15].MULTi/internal_result_reg[2]) is unused and will be removed from module FIR_Notch.
+WARNING: [Synth 8-3332] Sequential element (gen_mult[15].MULTi/internal_result_reg[1]) is unused and will be removed from module FIR_Notch.
+WARNING: [Synth 8-3332] Sequential element (gen_mult[15].MULTi/internal_result_reg[0]) is unused and will be removed from module FIR_Notch.
+WARNING: [Synth 8-3332] Sequential element (gen_mult[18].MULTi/internal_result_reg[0]) is unused and will be removed from module FIR_Notch.
+WARNING: [Synth 8-3332] Sequential element (gen_mult[19].MULTi/internal_result_reg[12]) is unused and will be removed from module FIR_Notch.
+WARNING: [Synth 8-3332] Sequential element (gen_mult[19].MULTi/internal_result_reg[11]) is unused and will be removed from module FIR_Notch.
+WARNING: [Synth 8-3332] Sequential element (gen_mult[19].MULTi/internal_result_reg[10]) is unused and will be removed from module FIR_Notch.
+WARNING: [Synth 8-3332] Sequential element (gen_mult[19].MULTi/internal_result_reg[9]) is unused and will be removed from module FIR_Notch.
+WARNING: [Synth 8-3332] Sequential element (gen_mult[19].MULTi/internal_result_reg[8]) is unused and will be removed from module FIR_Notch.
+WARNING: [Synth 8-3332] Sequential element (gen_mult[19].MULTi/internal_result_reg[7]) is unused and will be removed from module FIR_Notch.
+WARNING: [Synth 8-3332] Sequential element (gen_mult[19].MULTi/internal_result_reg[6]) is unused and will be removed from module FIR_Notch.
+WARNING: [Synth 8-3332] Sequential element (gen_mult[19].MULTi/internal_result_reg[5]) is unused and will be removed from module FIR_Notch.
+WARNING: [Synth 8-3332] Sequential element (gen_mult[19].MULTi/internal_result_reg[4]) is unused and will be removed from module FIR_Notch.
+WARNING: [Synth 8-3332] Sequential element (gen_mult[19].MULTi/internal_result_reg[3]) is unused and will be removed from module FIR_Notch.
+WARNING: [Synth 8-3332] Sequential element (gen_mult[19].MULTi/internal_result_reg[2]) is unused and will be removed from module FIR_Notch.
+WARNING: [Synth 8-3332] Sequential element (gen_mult[19].MULTi/internal_result_reg[1]) is unused and will be removed from module FIR_Notch.
+INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:03:00 ; elapsed = 00:03:39 . Memory (MB): peak = 845.406 ; gain = 533.566
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+ROM:
++------------+------------+---------------+----------------+
+|Module Name | RTL Object | Depth x Width | Implemented As | 
++------------+------------+---------------+----------------+
+|Sin_Rom     | SIN_ROM[0] | 8192x11       | LUT            | 
+|Sin_Rom     | SIN_ROM[0] | 8192x11       | LUT            | 
+|Sin_Rom     | SIN_ROM[0] | 8192x11       | LUT            | 
+|Sin_Rom     | SIN_ROM[0] | 8192x11       | LUT            | 
++------------+------------+---------------+----------------+
+
+
+DSP: Preliminary Mapping  Report (see note below)
++------------+--------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping        | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+--------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|FIR_Notch   | (A''*(B:0x3ffef))' | 12     | 6      | -      | -      | 18     | 2    | 0    | -    | -    | -     | 1    | 0    | 
+|FIR_Notch   | (A''*(B:0x23))'    | 12     | 7      | -      | -      | 19     | 2    | 0    | -    | -    | -     | 1    | 0    | 
+|FIR_Notch   | (ACIN2*(B:0x3b))'  | 12     | 7      | -      | -      | 19     | 1    | 0    | -    | -    | -     | 1    | 0    | 
+|FIR_Notch   | (ACIN2*(B:0x57))'  | 12     | 8      | -      | -      | 20     | 1    | 0    | -    | -    | -     | 1    | 0    | 
+|FIR_Notch   | (ACIN2*(B:0x74))'  | 12     | 8      | -      | -      | 20     | 1    | 0    | -    | -    | -     | 1    | 0    | 
+|FIR_Notch   | (ACIN2*(B:0x8f))'  | 12     | 9      | -      | -      | 21     | 1    | 0    | -    | -    | -     | 1    | 0    | 
+|FIR_Notch   | (ACIN2*(B:0xa8))'  | 12     | 9      | -      | -      | 21     | 1    | 0    | -    | -    | -     | 1    | 0    | 
+|FIR_Notch   | (ACIN2*(B:0xbc))'  | 12     | 9      | -      | -      | 21     | 1    | 0    | -    | -    | -     | 1    | 0    | 
+|FIR_Notch   | (ACIN2*(B:0xc9))'  | 12     | 9      | -      | -      | 21     | 1    | 0    | -    | -    | -     | 1    | 0    | 
+|FIR_Notch   | (ACIN2*(B:0xcd))'  | 12     | 9      | -      | -      | 21     | 1    | 0    | -    | -    | -     | 1    | 0    | 
+|FIR_Notch   | (ACIN2*(B:0xc9))'  | 12     | 9      | -      | -      | 21     | 1    | 0    | -    | -    | -     | 1    | 0    | 
+|FIR_Notch   | (ACIN2*(B:0xbc))'  | 12     | 9      | -      | -      | 21     | 1    | 0    | -    | -    | -     | 1    | 0    | 
+|FIR_Notch   | (ACIN2*(B:0xa8))'  | 12     | 9      | -      | -      | 21     | 1    | 0    | -    | -    | -     | 1    | 0    | 
+|FIR_Notch   | (ACIN2*(B:0x8f))'  | 12     | 9      | -      | -      | 21     | 1    | 0    | -    | -    | -     | 1    | 0    | 
+|FIR_Notch   | (ACIN2*(B:0x74))'  | 12     | 8      | -      | -      | 20     | 1    | 0    | -    | -    | -     | 1    | 0    | 
+|FIR_Notch   | (ACIN2*(B:0x57))'  | 12     | 8      | -      | -      | 20     | 1    | 0    | -    | -    | -     | 1    | 0    | 
+|FIR_Notch   | (ACIN2*(B:0x3b))'  | 12     | 7      | -      | -      | 19     | 1    | 0    | -    | -    | -     | 1    | 0    | 
+|FIR_Notch   | (ACIN2*(B:0x23))'  | 12     | 7      | -      | -      | 19     | 1    | 0    | -    | -    | -     | 1    | 0    | 
+|FIR_Notch   | (A''*(B:0x3ffef))' | 12     | 6      | -      | -      | 18     | 2    | 0    | -    | -    | -     | 1    | 0    | 
++------------+--------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:03:16 ; elapsed = 00:03:58 . Memory (MB): peak = 881.133 ; gain = 569.293
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:03:18 ; elapsed = 00:04:01 . Memory (MB): peak = 884.066 ; gain = 572.227
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:03:23 ; elapsed = 00:04:07 . Memory (MB): peak = 903.773 ; gain = 591.934
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-5753] loadless multi-driven net cos_o[11] with 1st driver pin 'nco_inst_in_band/salida_sen[11]' [E:/Especializacion_fiuba/CLP/trabajo final/FIR/src/filter_VIO.vhd:89]
+WARNING: [Synth 8-5753] loadless multi-driven net cos_o[11] with 2nd driver pin 'nco_inst_out_band/salida_sen[11]' [E:/Especializacion_fiuba/CLP/trabajo final/FIR/src/filter_VIO.vhd:104]
+WARNING: [Synth 8-5753] loadless multi-driven net cos_o[10] with 1st driver pin 'nco_inst_in_band/salida_sen[10]' [E:/Especializacion_fiuba/CLP/trabajo final/FIR/src/filter_VIO.vhd:89]
+WARNING: [Synth 8-5753] loadless multi-driven net cos_o[10] with 2nd driver pin 'nco_inst_out_band/salida_sen[10]' [E:/Especializacion_fiuba/CLP/trabajo final/FIR/src/filter_VIO.vhd:104]
+WARNING: [Synth 8-5753] loadless multi-driven net cos_o[9] with 1st driver pin 'nco_inst_in_band/salida_sen[9]' [E:/Especializacion_fiuba/CLP/trabajo final/FIR/src/filter_VIO.vhd:89]
+WARNING: [Synth 8-5753] loadless multi-driven net cos_o[9] with 2nd driver pin 'nco_inst_out_band/salida_sen[9]' [E:/Especializacion_fiuba/CLP/trabajo final/FIR/src/filter_VIO.vhd:104]
+WARNING: [Synth 8-5753] loadless multi-driven net cos_o[8] with 1st driver pin 'nco_inst_in_band/salida_sen[8]' [E:/Especializacion_fiuba/CLP/trabajo final/FIR/src/filter_VIO.vhd:89]
+WARNING: [Synth 8-5753] loadless multi-driven net cos_o[8] with 2nd driver pin 'nco_inst_out_band/salida_sen[8]' [E:/Especializacion_fiuba/CLP/trabajo final/FIR/src/filter_VIO.vhd:104]
+WARNING: [Synth 8-5753] loadless multi-driven net cos_o[7] with 1st driver pin 'nco_inst_in_band/salida_sen[7]' [E:/Especializacion_fiuba/CLP/trabajo final/FIR/src/filter_VIO.vhd:89]
+WARNING: [Synth 8-5753] loadless multi-driven net cos_o[7] with 2nd driver pin 'nco_inst_out_band/salida_sen[7]' [E:/Especializacion_fiuba/CLP/trabajo final/FIR/src/filter_VIO.vhd:104]
+WARNING: [Synth 8-5753] loadless multi-driven net cos_o[6] with 1st driver pin 'nco_inst_in_band/salida_sen[6]' [E:/Especializacion_fiuba/CLP/trabajo final/FIR/src/filter_VIO.vhd:89]
+WARNING: [Synth 8-5753] loadless multi-driven net cos_o[6] with 2nd driver pin 'nco_inst_out_band/salida_sen[6]' [E:/Especializacion_fiuba/CLP/trabajo final/FIR/src/filter_VIO.vhd:104]
+WARNING: [Synth 8-5753] loadless multi-driven net cos_o[5] with 1st driver pin 'nco_inst_in_band/salida_sen[5]' [E:/Especializacion_fiuba/CLP/trabajo final/FIR/src/filter_VIO.vhd:89]
+WARNING: [Synth 8-5753] loadless multi-driven net cos_o[5] with 2nd driver pin 'nco_inst_out_band/salida_sen[5]' [E:/Especializacion_fiuba/CLP/trabajo final/FIR/src/filter_VIO.vhd:104]
+WARNING: [Synth 8-5753] loadless multi-driven net cos_o[4] with 1st driver pin 'nco_inst_in_band/salida_sen[4]' [E:/Especializacion_fiuba/CLP/trabajo final/FIR/src/filter_VIO.vhd:89]
+WARNING: [Synth 8-5753] loadless multi-driven net cos_o[4] with 2nd driver pin 'nco_inst_out_band/salida_sen[4]' [E:/Especializacion_fiuba/CLP/trabajo final/FIR/src/filter_VIO.vhd:104]
+WARNING: [Synth 8-5753] loadless multi-driven net cos_o[3] with 1st driver pin 'nco_inst_in_band/salida_sen[3]' [E:/Especializacion_fiuba/CLP/trabajo final/FIR/src/filter_VIO.vhd:89]
+WARNING: [Synth 8-5753] loadless multi-driven net cos_o[3] with 2nd driver pin 'nco_inst_out_band/salida_sen[3]' [E:/Especializacion_fiuba/CLP/trabajo final/FIR/src/filter_VIO.vhd:104]
+WARNING: [Synth 8-5753] loadless multi-driven net cos_o[2] with 1st driver pin 'nco_inst_in_band/salida_sen[2]' [E:/Especializacion_fiuba/CLP/trabajo final/FIR/src/filter_VIO.vhd:89]
+WARNING: [Synth 8-5753] loadless multi-driven net cos_o[2] with 2nd driver pin 'nco_inst_out_band/salida_sen[2]' [E:/Especializacion_fiuba/CLP/trabajo final/FIR/src/filter_VIO.vhd:104]
+WARNING: [Synth 8-5753] loadless multi-driven net cos_o[1] with 1st driver pin 'nco_inst_in_band/salida_sen[1]' [E:/Especializacion_fiuba/CLP/trabajo final/FIR/src/filter_VIO.vhd:89]
+WARNING: [Synth 8-5753] loadless multi-driven net cos_o[1] with 2nd driver pin 'nco_inst_out_band/salida_sen[1]' [E:/Especializacion_fiuba/CLP/trabajo final/FIR/src/filter_VIO.vhd:104]
+WARNING: [Synth 8-5753] loadless multi-driven net cos_o[0] with 1st driver pin 'nco_inst_in_band/salida_sen[0]' [E:/Especializacion_fiuba/CLP/trabajo final/FIR/src/filter_VIO.vhd:89]
+WARNING: [Synth 8-5753] loadless multi-driven net cos_o[0] with 2nd driver pin 'nco_inst_out_band/salida_sen[0]' [E:/Especializacion_fiuba/CLP/trabajo final/FIR/src/filter_VIO.vhd:104]
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:03:25 ; elapsed = 00:04:09 . Memory (MB): peak = 903.773 ; gain = 591.934
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:03:25 ; elapsed = 00:04:09 . Memory (MB): peak = 903.773 ; gain = 591.934
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:03:25 ; elapsed = 00:04:09 . Memory (MB): peak = 903.773 ; gain = 591.934
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:03:25 ; elapsed = 00:04:09 . Memory (MB): peak = 903.773 ; gain = 591.934
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:03:25 ; elapsed = 00:04:09 . Memory (MB): peak = 903.773 ; gain = 591.934
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:03:25 ; elapsed = 00:04:09 . Memory (MB): peak = 903.773 ; gain = 591.934
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Static Shift Register Report:
++------------+----------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Module Name | RTL Name                   | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
++------------+----------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|FIR_Notch   | SHIFT_REG/regs_reg[5][11]  | 6      | 12    | YES          | NO                 | YES               | 12     | 0       | 
+|FIR_Notch   | SHIFT_REG/regs_reg[38][11] | 18     | 12    | YES          | NO                 | YES               | 12     | 0       | 
++------------+----------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+--------------+----------+
+|      |BlackBox name |Instances |
++------+--------------+----------+
+|1     |vio_0         |         1|
+|2     |ila_0         |         1|
++------+--------------+----------+
+
+Report Cell Usage: 
++------+-------------+------+
+|      |Cell         |Count |
++------+-------------+------+
+|1     |ila_0_bbox_1 |     1|
+|2     |vio_0_bbox_0 |     1|
+|3     |BUFG         |     1|
+|4     |CARRY4       |   260|
+|5     |DSP48E1      |     3|
+|6     |DSP48E1_1    |    16|
+|7     |LUT1         |   114|
+|8     |LUT2         |   584|
+|9     |LUT3         |   434|
+|10    |LUT4         |   757|
+|11    |LUT5         |   399|
+|12    |LUT6         |  2384|
+|13    |MUXF7        |   816|
+|14    |MUXF8        |   206|
+|15    |SRL16E       |    24|
+|16    |FDRE         |   996|
+|17    |IBUF         |     1|
++------+-------------+------+
+
+Report Instance Areas: 
++------+-------------------------+---------------+------+
+|      |Instance                 |Module         |Cells |
++------+-------------------------+---------------+------+
+|1     |top                      |               |  7007|
+|2     |  nco_inst_in_band       |nco__1         |  2175|
+|3     |    af                   |Acum_Fase_44   |    48|
+|4     |    ss                   |Sin_Cos_45     |  2127|
+|5     |      Sin_Cos_Table      |Sin_Rom_46     |  2032|
+|6     |  nco_inst_out_band      |nco            |  2175|
+|7     |    af                   |Acum_Fase      |    48|
+|8     |    ss                   |Sin_Cos        |  2127|
+|9     |      Sin_Cos_Table      |Sin_Rom        |  2032|
+|10    |  filter_DUT             |FIR_Notch      |  2632|
+|11    |    SHIFT_REG            |shift_register |   658|
+|12    |    SUM                  |adder          |  1055|
+|13    |    \gen_mult[10].MULTi  |multiplier     |    37|
+|14    |    \gen_mult[11].MULTi  |multiplier_0   |    60|
+|15    |    \gen_mult[12].MULTi  |multiplier_1   |    23|
+|16    |    \gen_mult[13].MULTi  |multiplier_2   |    46|
+|17    |    \gen_mult[14].MULTi  |multiplier_3   |    31|
+|18    |    \gen_mult[15].MULTi  |multiplier_4   |    28|
+|19    |    \gen_mult[16].MULTi  |multiplier_5   |     3|
+|20    |    \gen_mult[17].MULTi  |multiplier_6   |    29|
+|21    |    \gen_mult[18].MULTi  |multiplier_7   |    53|
+|22    |    \gen_mult[20].MULTi  |multiplier_8   |    80|
+|23    |    \gen_mult[21].MULTi  |multiplier_9   |     1|
+|24    |    \gen_mult[22].MULTi  |multiplier_10  |     1|
+|25    |    \gen_mult[23].MULTi  |multiplier_11  |     1|
+|26    |    \gen_mult[24].MULTi  |multiplier_12  |     1|
+|27    |    \gen_mult[25].MULTi  |multiplier_13  |     1|
+|28    |    \gen_mult[26].MULTi  |multiplier_14  |     1|
+|29    |    \gen_mult[27].MULTi  |multiplier_15  |     2|
+|30    |    \gen_mult[28].MULTi  |multiplier_16  |     1|
+|31    |    \gen_mult[29].MULTi  |multiplier_17  |     1|
+|32    |    \gen_mult[30].MULTi  |multiplier_18  |     1|
+|33    |    \gen_mult[31].MULTi  |multiplier_19  |     1|
+|34    |    \gen_mult[32].MULTi  |multiplier_20  |     1|
+|35    |    \gen_mult[33].MULTi  |multiplier_21  |     1|
+|36    |    \gen_mult[34].MULTi  |multiplier_22  |     1|
+|37    |    \gen_mult[35].MULTi  |multiplier_23  |     1|
+|38    |    \gen_mult[36].MULTi  |multiplier_24  |     2|
+|39    |    \gen_mult[37].MULTi  |multiplier_25  |     1|
+|40    |    \gen_mult[38].MULTi  |multiplier_26  |    44|
+|41    |    \gen_mult[40].MULTi  |multiplier_27  |    53|
+|42    |    \gen_mult[41].MULTi  |multiplier_28  |    60|
+|43    |    \gen_mult[42].MULTi  |multiplier_29  |     3|
+|44    |    \gen_mult[43].MULTi  |multiplier_30  |    28|
+|45    |    \gen_mult[44].MULTi  |multiplier_31  |    34|
+|46    |    \gen_mult[45].MULTi  |multiplier_32  |    46|
+|47    |    \gen_mult[46].MULTi  |multiplier_33  |    23|
+|48    |    \gen_mult[47].MULTi  |multiplier_34  |    28|
+|49    |    \gen_mult[48].MULTi  |multiplier_35  |    40|
+|50    |    \gen_mult[50].MULTi  |multiplier_36  |    45|
+|51    |    \gen_mult[51].MULTi  |multiplier_37  |    34|
+|52    |    \gen_mult[52].MULTi  |multiplier_38  |    12|
+|53    |    \gen_mult[53].MULTi  |multiplier_39  |    12|
+|54    |    \gen_mult[5].MULTi   |multiplier_40  |    12|
+|55    |    \gen_mult[6].MULTi   |multiplier_41  |    12|
+|56    |    \gen_mult[7].MULTi   |multiplier_42  |    12|
+|57    |    \gen_mult[8].MULTi   |multiplier_43  |    12|
+|58    |  gen_ena                |gen_enable     |    11|
++------+-------------------------+---------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:03:25 ; elapsed = 00:04:09 . Memory (MB): peak = 903.773 ; gain = 591.934
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 764 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:58 ; elapsed = 00:03:58 . Memory (MB): peak = 903.773 ; gain = 522.098
+Synthesis Optimization Complete : Time (s): cpu = 00:03:26 ; elapsed = 00:04:10 . Memory (MB): peak = 903.773 ; gain = 591.934
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 1302 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+162 Infos, 231 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:03:28 ; elapsed = 00:04:19 . Memory (MB): peak = 903.773 ; gain = 593.680
+INFO: [Common 17-1381] The checkpoint 'E:/Especializacion_fiuba/CLP/trabajo final/FIR/sintesis/filter/filter.runs/synth_1/filter_VIO.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file filter_VIO_utilization_synth.rpt -pb filter_VIO_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.065 . Memory (MB): peak = 903.773 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Sat Apr 26 17:29:47 2025...

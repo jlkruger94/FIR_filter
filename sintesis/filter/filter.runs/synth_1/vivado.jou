@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2018.1 (64-bit)
+# SW Build 2188600 on Wed Apr  4 18:40:38 MDT 2018
+# IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
+# Start of session at: Sat Apr 26 17:25:15 2025
+# Process ID: 14544
+# Current directory: E:/Especializacion_fiuba/CLP/trabajo final/FIR/sintesis/filter/filter.runs/synth_1
+# Command line: vivado.exe -log filter_VIO.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source filter_VIO.tcl
+# Log file: E:/Especializacion_fiuba/CLP/trabajo final/FIR/sintesis/filter/filter.runs/synth_1/filter_VIO.vds
+# Journal file: E:/Especializacion_fiuba/CLP/trabajo final/FIR/sintesis/filter/filter.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source filter_VIO.tcl -notrace

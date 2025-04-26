@@ -95,14 +95,14 @@ begin
         cos_o
     );
 
-    process(clk)
-    begin
-        if rising_edge(clk) then
-            if ena_tb = '1' then 
-                sin_o_sum <= unsigned(resize(sin_o_in_band,12) + resize(sin_o_out_band,12));        
-            end if;
-        end if;
-    end process;
+    --process(clk)
+    --begin
+       -- if rising_edge(clk) then
+       --     if ena_tb = '1' then 
+        --        sin_o_sum <= unsigned(resize(sin_o_in_band,12) + resize(sin_o_out_band,12));
+        --    end if;
+      --  end if;
+   -- end process;
 
 
     filter_DUT: FIR_Notch
@@ -110,7 +110,7 @@ begin
             clk    =>   clk,
             rst    =>   rst,
             ena    =>   ena_tb,
-            x_in   => sin_o_sum,
+            x_in   => sin_o_out_band,
             y_out  => salida_tb
         );
 

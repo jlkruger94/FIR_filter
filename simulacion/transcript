@@ -1,0 +1,12 @@
+# Compile of filter_VIO.vhd was successful.
+# Compile of FIR_Pkg.vhd was successful.
+# Compile of generate_enable.vhd was successful.
+# Compile of multiplier.vhd was successful.
+# Compile of nco.vhd was successful.
+# Compile of shift_register.vhd was successful.
+# Compile of sin_cos.vhd was successful.
+# Compile of sin_rom.vhd was successful.
+# Compile of acum_fase.vhd was successful.
+# Compile of adder.vhd was successful.
+# Compile of filter.vhd was successful.
+# 11 compiles, 0 failed with no errors.
